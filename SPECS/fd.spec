@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           fd
-Version:        7.3.0
+Version:        7.4.0
 Release:        1%{?dist}
 Summary:        fd is a simple, fast and user-friendly alternative to find.
 
@@ -51,6 +51,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon Sep 16 2019 Jamie Curnow <jc@jc21.com> - 7.4.0-1
+- v7.4.0
+
 * Thu Feb 14 2019 Jamie Curnow <jc@jc21.com> - 7.3.0-1
 - v7.3.0 <3
 
