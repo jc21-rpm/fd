@@ -1,16 +1,14 @@
 %global debug_package %{nil}
 
 Name:           fd
-Version:        7.4.0
+Version:        7.5.0
 Release:        1%{?dist}
 Summary:        fd is a simple, fast and user-friendly alternative to find.
-
 Group:          Applications/System
 License:        GPLv2
 URL:            https://github.com/sharkdp/%{name}
-
-BuildRequires:  cmake, libgit2, openssl-devel
-%{?el7:BuildRequires: cargo, rust}
+Source:         https://github.com/sharkdp/%{name}/archive/v%{version}.tar.gz
+BuildRequires:  cmake, libgit2, openssl-devel, cargo, rust
 
 %description
 - Convenient syntax: fd PATTERN instead of find -iname '*PATTERN*'.
@@ -25,32 +23,28 @@ BuildRequires:  cmake, libgit2, openssl-devel
 - Parallel command execution with a syntax similar to GNU Parallel.
 
 %prep
-wget https://github.com/sharkdp/%{name}/archive/v%{version}.tar.gz
-tar xzf v%{version}.tar.gz
-
+%setup -n %{name}-%{version}
 
 %build
-cd %{name}-%{version}
 cargo build --release
-
 
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/bin
-cp %{name}-%{version}/target/release/fd %{buildroot}/usr/bin/
-
+cp target/release/fd %{buildroot}/usr/bin/
 
 %clean
 rm -rf %{buildroot}
 
-
 %files
 %defattr(-,root,root,-)
-%doc %{name}-%{version}/LICENSE* %{name}-%{version}/*.md
+%doc LICENSE* *.md
 /usr/bin/fd
 
-
 %changelog
+* Tue Mar 24 2020 Jamie Curnow <jc@jc21.com> - 7.5.0-1
+- v7.5.0
+
 * Mon Sep 16 2019 Jamie Curnow <jc@jc21.com> - 7.4.0-1
 - v7.4.0
 
