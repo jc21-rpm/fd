@@ -2,7 +2,7 @@
 
 Name:           fd
 Version:        8.4.0
-Release:        1%{?dist}
+Release:        1
 Summary:        fd is a simple, fast and user-friendly alternative to find.
 Group:          Applications/System
 License:        GPLv2
