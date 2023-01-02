@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           fd
-Version:        8.5.3
+Version:        8.6.0
 Release:        1
 Summary:        fd is a simple, fast and user-friendly alternative to find.
 Group:          Applications/System
@@ -42,7 +42,10 @@ rm -rf %{buildroot}
 /usr/bin/fd
 
 %changelog
-* Tue Nov 153 2022 Jamie Curnow <jc@jc21.com> - 8.5.3-1
+* Tue Jan 3 2023 Jamie Curnow <jc@jc21.com> - 8.6.0-1
+- v8.6.0
+
+* Tue Nov 15 2022 Jamie Curnow <jc@jc21.com> - 8.5.3-1
 - v8.5.3
 
 * Thu Nov 3 2022 Jamie Curnow <jc@jc21.com> - 8.5.1-1
