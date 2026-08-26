@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           fd
-Version:        10.4.2
+Version:        10.5.0
 Release:        1%{?dist}
 Summary:        fd is a simple, fast and user-friendly alternative to find.
 Group:          Applications/System
@@ -42,6 +42,9 @@ rm -rf %{buildroot}
 /usr/bin/fd
 
 %changelog
+* Thu Aug 27 2026 Jamie Curnow <jc@jc21.com> - 10.5.0-1
+- v10.5.0
+
 * Wed Mar 11 2026 Jamie Curnow <jc@jc21.com> - 10.4.2-1
 - v10.4.2
 
